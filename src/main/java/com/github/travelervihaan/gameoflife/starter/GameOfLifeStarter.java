@@ -12,6 +12,12 @@ public class GameOfLifeStarter implements IStarter {
         IBoard board = new Board(getBoardSizeFromKeyboard());
     }
 
+    /**
+     * Ask an user for provide integer number from keyboard to set size of game board.
+     * If provided number will be in incorrect format (e.g. will contain some commas or other signs which are not numbers,
+     * then size will be set as default value (10)
+     * @return size read from keyboard or default value instead (if provided data has unexpected format)
+     */
     private int getBoardSizeFromKeyboard() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(PROVIDE_BOARD_SIZE_MESSAGE);
