@@ -12,12 +12,6 @@ public interface ICell {
     boolean changeCellState();
 
     /**
-     * Return location of cell as array of coordinates X and Y
-     * @return an array of coordinates X and Y
-     */
-    int[] getLocation();
-
-    /**
      * Gives back value of coordinate X
      * @return coordinate X
      */
@@ -28,4 +22,22 @@ public interface ICell {
      * @return coordinate Y
      */
     int getLocationY();
+
+    /**
+     * Return location of cell as array of coordinates X and Y
+     * @return an Coordinates object contains coordinates X and Y of cell
+     */
+    Coordinates getCoordinates();
+
+    /**
+     * Returns neighbour cells of the cell object. Number of neighbours depends on position of cell on game board
+     * @return an array of neighbour cells objects.
+     */
+    Cell[] getNeighbours();
+
+    /**
+     * Returns information about state of cell - alive /dead
+     * @return boolean value: true = alive, false - dead
+     */
+    boolean getCellState();
 }

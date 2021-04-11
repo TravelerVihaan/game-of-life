@@ -7,10 +7,26 @@
     <groupId>com.github.travelervihaan</groupId>
     <artifactId>gameoflife</artifactId>
     <version>0.1-SNAPSHOT</version>
+    <name>Game-of-Life</name>
+    <description>Implementation of famous game founded by Conway. This project is developed to help my firend on studies' project.</description>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

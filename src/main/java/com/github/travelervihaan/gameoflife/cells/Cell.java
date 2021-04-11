@@ -1,31 +1,28 @@
 package com.github.travelervihaan.gameoflife.cells;
 
-
-import com.github.travelervihaan.gameoflife.util.ILiteralConstants;
-
 public class Cell implements ICell {
 
     private CellState cellState;
-
     private final Coordinates coordinates;
+    private final Cell[] neighbours;
 
-    private Cell[] neighbours = new Cell[8];
-
-    public Cell(CellState cellState, int locationX, int locationY) {
-        this.cellState = cellState;
+    public Cell(CellState state, int locationX, int locationY, int neighboursCount) {
+        cellState = state;
         coordinates = new Coordinates(locationX, locationY);
+        neighbours = new Cell[neighboursCount];
     }
 
     @Override
     public boolean changeCellState(){
         boolean changedState = !cellState.getCellState();
-        cellState.setCellState(changedState);
+        if (cellState != CellState.ALIVE) cellState = CellState.ALIVE;
+        else cellState = CellState.DEAD;
         return changedState;
     }
 
     @Override
-    public int[] getLocation(){
-        return coordinates.getCoordinates();
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
     @Override
@@ -39,9 +36,12 @@ public class Cell implements ICell {
     }
 
     @Override
-    public String toString() {
-        return "Cell{" +
-                "cellState=" + cellState +
-                '}';
+    public Cell[] getNeighbours() {
+        return neighbours;
+    }
+
+    @Override
+    public boolean getCellState() {
+        return cellState.getCellState();
     }
 }

@@ -4,17 +4,13 @@ public enum CellState {
     ALIVE(true),
     DEAD(false);
 
-    private boolean cellState;
+    private final boolean cellState;
 
     CellState(boolean cellState){
         this.cellState = cellState;
     }
 
-    boolean getCellState() {
+    public boolean getCellState() {
         return cellState;
-    }
-
-    void setCellState(boolean cellState) {
-        this.cellState = cellState;
     }
 }
