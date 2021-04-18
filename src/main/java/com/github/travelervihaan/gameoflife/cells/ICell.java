@@ -5,10 +5,6 @@ package com.github.travelervihaan.gameoflife.cells;
  */
 public interface ICell {
 
-    /**
-     * Share current status of cell: alive / dead
-     * @return cell status
-     */
     boolean changeCellState();
 
     /**
@@ -30,10 +26,10 @@ public interface ICell {
     Coordinates getCoordinates();
 
     /**
-     * Returns neighbour cells of the cell object. Number of neighbours depends on position of cell on game board
-     * @return an array of neighbour cells objects.
+     * Return cell position on board, which determines count of neighbours.
+     * @return cell position
      */
-    Cell[] getNeighbours();
+    CellPosition getCellPosition();
 
     /**
      * Returns information about state of cell - alive /dead

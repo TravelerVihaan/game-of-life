@@ -4,12 +4,12 @@ public class Cell implements ICell {
 
     private CellState cellState;
     private final Coordinates coordinates;
-    private final Cell[] neighbours;
+    private final CellPosition cellPosition;
 
-    public Cell(CellState state, int locationX, int locationY, int neighboursCount) {
-        cellState = state;
-        coordinates = new Coordinates(locationX, locationY);
-        neighbours = new Cell[neighboursCount];
+    public Cell(CellState cellState, Coordinates coordinates, CellPosition cellPosition) {
+        this.cellState = cellState;
+        this.coordinates = coordinates;
+        this.cellPosition = cellPosition;
     }
 
     @Override
@@ -35,9 +35,8 @@ public class Cell implements ICell {
         return coordinates.getCoordinateY();
     }
 
-    @Override
-    public Cell[] getNeighbours() {
-        return neighbours;
+    public CellPosition getCellPosition() {
+        return cellPosition;
     }
 
     @Override

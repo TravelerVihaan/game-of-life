@@ -1,7 +1,7 @@
 package com.github.travelervihaan.gameoflife.cells;
 
 
-public enum CellAroundBound {
+public enum CellPosition {
     TOP_RIGHT_CORNER(3),
     TOP_LEFT_CORNER(3),
     BOTTOM_RIGHT_CORNER(3),
@@ -14,7 +14,7 @@ public enum CellAroundBound {
 
     private final int neighboursCount;
 
-    CellAroundBound(int neighboursCount){
+    CellPosition(int neighboursCount){
         this.neighboursCount = neighboursCount;
     }
 
