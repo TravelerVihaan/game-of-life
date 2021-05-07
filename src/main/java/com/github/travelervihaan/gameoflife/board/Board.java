@@ -1,7 +1,9 @@
 package com.github.travelervihaan.gameoflife.board;
 
 import com.github.travelervihaan.gameoflife.cells.Cell;
+import com.github.travelervihaan.gameoflife.cells.CellPosition;
 import com.github.travelervihaan.gameoflife.cells.CellState;
+import com.github.travelervihaan.gameoflife.cells.Coordinates;
 import com.github.travelervihaan.gameoflife.cells.ICell;
 
 public class Board implements IBoard {
@@ -24,12 +26,22 @@ public class Board implements IBoard {
     private ICell createCell(int x, int y){
         boolean bState = Math.random() < 0.7;
         CellState cellState = bState ? CellState.ALIVE : CellState.DEAD;
-        int neighbours = calculateNeighbours(x, y);
-        return new Cell(cellState, x, y, neighbours);
+        Coordinates coordinates = new Coordinates(x, y);
+        CellPosition cellPosition = calculateCellPosition(x, y);
+        return new Cell(cellState, x, y, cellPosition);
     }
 
-    private int calculateNeighbours(int x, int y){
-        return 1;
+    private CellPosition calculateCellPosition(int x, int y){
+        if(x == 0){
+            if(y == 0){
+                return CellPosition.TOP_LEFT_CORNER;
+            } else if(y == size){
+                return CellPosition.TOP_RIGHT_CORNER;
+            } else {
+                return CellPosition.LEFT;
+            }
+        }
+    return null;
     }
 
     public ICell[][] getBoardCells() {

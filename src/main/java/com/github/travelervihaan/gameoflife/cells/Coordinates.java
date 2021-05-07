@@ -2,7 +2,7 @@ package com.github.travelervihaan.gameoflife.cells;
 
 import java.util.Objects;
 
-record Coordinates(int coordinateX, int coordinateY) {
+public record Coordinates(int coordinateX, int coordinateY) {
 
     int getCoordinateX() {
         return coordinateX;

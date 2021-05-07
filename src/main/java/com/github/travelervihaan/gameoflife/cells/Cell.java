@@ -6,9 +6,9 @@ public class Cell implements ICell {
     private final Coordinates coordinates;
     private final CellPosition cellPosition;
 
-    public Cell(CellState cellState, Coordinates coordinates, CellPosition cellPosition) {
+    public Cell(CellState cellState, int x, int y, CellPosition cellPosition) {
         this.cellState = cellState;
-        this.coordinates = coordinates;
+        this.coordinates = new Coordinates(x, y);
         this.cellPosition = cellPosition;
     }
 
