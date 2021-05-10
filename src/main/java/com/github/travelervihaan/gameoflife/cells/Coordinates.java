@@ -24,6 +24,14 @@ public record Coordinates(int coordinateX, int coordinateY) {
         return coordinateX == that.coordinateX && coordinateY == that.coordinateY;
     }
 
+    private boolean isInCorner(int size){
+        if(coordinateX == size && coordinateY == size)
+            return true;
+        else if (coordinateX == 1 && coordinateY == size)
+            return true;
+        else return coordinateX == 1 && coordinateY == 1;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(coordinateX, coordinateY);

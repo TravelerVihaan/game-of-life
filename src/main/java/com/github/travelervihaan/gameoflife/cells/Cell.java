@@ -4,12 +4,9 @@ public class Cell implements ICell {
 
     private CellState cellState;
     private final Coordinates coordinates;
-    private final CellPosition cellPosition;
-
-    public Cell(CellState cellState, int x, int y, CellPosition cellPosition) {
+    public Cell(CellState cellState, int x, int y) {
         this.cellState = cellState;
         this.coordinates = new Coordinates(x, y);
-        this.cellPosition = cellPosition;
     }
 
     @Override
@@ -33,10 +30,6 @@ public class Cell implements ICell {
     @Override
     public int getLocationY() {
         return coordinates.getCoordinateY();
-    }
-
-    public CellPosition getCellPosition() {
-        return cellPosition;
     }
 
     @Override

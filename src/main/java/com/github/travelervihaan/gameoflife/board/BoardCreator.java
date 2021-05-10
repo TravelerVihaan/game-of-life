@@ -1,17 +1,16 @@
 package com.github.travelervihaan.gameoflife.board;
 
 import com.github.travelervihaan.gameoflife.cells.Cell;
-import com.github.travelervihaan.gameoflife.cells.CellPosition;
 import com.github.travelervihaan.gameoflife.cells.CellState;
 import com.github.travelervihaan.gameoflife.cells.Coordinates;
 import com.github.travelervihaan.gameoflife.cells.ICell;
 
-public class Board implements IBoard {
+public class BoardCreator implements IBoardCreator {
 
     private final int size;
     private final ICell[][] boardCells;
 
-    public Board(int size) {
+    public BoardCreator(int size) {
         this.size = size;
         this.boardCells = new Cell[size][size];
     }
@@ -27,22 +26,10 @@ public class Board implements IBoard {
         boolean bState = Math.random() < 0.7;
         CellState cellState = bState ? CellState.ALIVE : CellState.DEAD;
         Coordinates coordinates = new Coordinates(x, y);
-        CellPosition cellPosition = calculateCellPosition(x, y);
-        return new Cell(cellState, x, y, cellPosition);
+
+        return new Cell(cellState, x, y);
     }
 
-    private CellPosition calculateCellPosition(int x, int y){
-        if(x == 0){
-            if(y == 0){
-                return CellPosition.TOP_LEFT_CORNER;
-            } else if(y == size){
-                return CellPosition.TOP_RIGHT_CORNER;
-            } else {
-                return CellPosition.LEFT;
-            }
-        }
-    return null;
-    }
 
     public ICell[][] getBoardCells() {
         return boardCells;
