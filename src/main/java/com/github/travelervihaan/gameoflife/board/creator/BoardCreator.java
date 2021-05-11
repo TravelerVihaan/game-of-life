@@ -29,7 +29,7 @@ public class BoardCreator implements IBoardCreator {
         CellState cellState = bState ? CellState.ALIVE : CellState.DEAD;
         Coordinates coordinates = new Coordinates(x, y);
 
-        return new Cell(cellState, x, y);
+        return new Cell(cellState, coordinates);
     }
 
 

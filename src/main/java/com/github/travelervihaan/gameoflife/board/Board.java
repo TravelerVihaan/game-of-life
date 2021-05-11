@@ -25,9 +25,12 @@ public class Board implements IBoard {
         return new ICell[0][];
     }
 
+    @Override
     public int getSize() {
         return size;
     }
+    
+    
 
     @Override
     public boolean equals(Object o) {

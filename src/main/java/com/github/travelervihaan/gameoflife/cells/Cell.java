@@ -7,10 +7,10 @@ public class Cell implements ICell {
     private final CellState[] cellStates;
     private final Coordinates coordinates;
 
-    public Cell(CellState cellState, int x, int y) {
+    public Cell(CellState cellState, Coordinates coordinates) {
         cellStates = new CellState[2];
         initCellState(cellState);
-        this.coordinates = new Coordinates(x, y);
+        this.coordinates = coordinates;
     }
 
 //    @Override
