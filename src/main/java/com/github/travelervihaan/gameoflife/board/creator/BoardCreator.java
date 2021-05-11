@@ -1,5 +1,7 @@
-package com.github.travelervihaan.gameoflife.board;
+package com.github.travelervihaan.gameoflife.board.creator;
 
+import com.github.travelervihaan.gameoflife.board.Board;
+import com.github.travelervihaan.gameoflife.board.IBoard;
 import com.github.travelervihaan.gameoflife.cells.Cell;
 import com.github.travelervihaan.gameoflife.cells.CellState;
 import com.github.travelervihaan.gameoflife.cells.Coordinates;
@@ -12,7 +14,7 @@ public class BoardCreator implements IBoardCreator {
 
     public BoardCreator(int size) {
         this.size = size;
-        this.boardCells = new Cell[size][size];
+        this.boardCells = new ICell[size][size];
     }
 
     @Override
@@ -33,5 +35,9 @@ public class BoardCreator implements IBoardCreator {
 
     public ICell[][] getBoardCells() {
         return boardCells;
+    }
+
+    public IBoard createBoard(){
+        return new Board(boardCells, size);
     }
 }

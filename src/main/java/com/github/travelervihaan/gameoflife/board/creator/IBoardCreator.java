@@ -1,4 +1,4 @@
-package com.github.travelervihaan.gameoflife.board;
+package com.github.travelervihaan.gameoflife.board.creator;
 
 /**
  * Interface representing game board, which is square with specific size

@@ -1,11 +1,13 @@
 package com.github.travelervihaan.gameoflife.cells;
 
+import com.github.travelervihaan.gameoflife.board.IBoard;
+
 /**
  * This class represents single cell in board. Cell stores information about it place on game board and state of life @see {@link com.github.travelervihaan.gameoflife.cells.CellState}.
  */
 public interface ICell {
 
-    boolean changeCellState();
+    boolean updateCellState();
 
     /**
      * Gives back value of coordinate X
@@ -26,14 +28,12 @@ public interface ICell {
     Coordinates getCoordinates();
 
     /**
-     * Return cell position on board, which determines count of neighbours.
-     * @return cell position
-     */
-    CellPosition getCellPosition();
-
-    /**
      * Returns information about state of cell - alive /dead
      * @return boolean value: true = alive, false - dead
      */
-    boolean getCellState();
+    CellState getCurrentCellState();
+
+    CellState getNextCellState();
+
+    void calculateNewCellState(IBoard board);
 }

@@ -1,7 +1,7 @@
 package com.github.travelervihaan.gameoflife.starter;
 
-import com.github.travelervihaan.gameoflife.board.BoardCreator;
-import com.github.travelervihaan.gameoflife.board.IBoardCreator;
+import com.github.travelervihaan.gameoflife.board.creator.BoardCreator;
+import com.github.travelervihaan.gameoflife.board.creator.IBoardCreator;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
