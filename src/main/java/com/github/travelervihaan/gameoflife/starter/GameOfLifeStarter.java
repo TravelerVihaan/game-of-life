@@ -1,6 +1,6 @@
 package com.github.travelervihaan.gameoflife.starter;
 
-import com.github.travelervihaan.gameoflife.board.creator.BoardCreator;
+import com.github.travelervihaan.gameoflife.board.creator.BoardCreatorFactory;
 import com.github.travelervihaan.gameoflife.board.creator.IBoardCreator;
 
 import java.util.InputMismatchException;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class GameOfLifeStarter implements IStarter {
 
     public void start(){
-        IBoardCreator board = new BoardCreator(getBoardSizeFromKeyboard());
+        IBoardCreator boardCreator = BoardCreatorFactory.createDefaultBoardCreator(getBoardSizeFromKeyboard());
     }
 
     /**

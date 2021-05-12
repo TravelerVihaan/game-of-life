@@ -35,5 +35,5 @@ public interface ICell {
 
     CellState getNextCellState();
 
-    void calculateNewCellState(IBoard board);
+    void calculateNewCellState(long aliveNeighbours);
 }

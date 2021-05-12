@@ -7,7 +7,7 @@ import com.github.travelervihaan.gameoflife.cells.CellState;
 import com.github.travelervihaan.gameoflife.cells.Coordinates;
 import com.github.travelervihaan.gameoflife.cells.ICell;
 
-public class BoardCreator implements IBoardCreator {
+class BoardCreator implements IBoardCreator {
 
     private final int size;
     private final ICell[][] boardCells;
@@ -18,10 +18,11 @@ public class BoardCreator implements IBoardCreator {
     }
 
     @Override
-    public void drawBoard() {
+    public IBoard initializeBoard() {
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++) boardCells[i][j] = createCell(i, j);
         }
+        return createBoard();
     }
 
     private ICell createCell(int x, int y){
@@ -32,12 +33,7 @@ public class BoardCreator implements IBoardCreator {
         return new Cell(cellState, x, y);
     }
 
-
-    public ICell[][] getBoardCells() {
-        return boardCells;
-    }
-
-    public IBoard createBoard(){
+    private IBoard createBoard(){
         return new Board(boardCells, size);
     }
 }

@@ -1,5 +1,6 @@
 package com.github.travelervihaan.gameoflife.board;
 
+import com.github.travelervihaan.gameoflife.cells.Coordinates;
 import com.github.travelervihaan.gameoflife.cells.ICell;
 
 import java.util.Arrays;
@@ -17,12 +18,22 @@ public class Board implements IBoard {
 
     @Override
     public ICell[][] getBoardCells() {
-        return new ICell[0][];
+        return cells;
     }
 
     @Override
-    public ICell[][] getCell() {
-        return new ICell[0][];
+    public ICell getCell(int x, int y) {
+        return cells[x][y];
+    }
+
+    @Override
+    public ICell getCell(Coordinates coordinates) {
+        return cells[coordinates.coordinateX()][coordinates.coordinateY()];
+    }
+
+    @Override
+    public void updateBoardCells() {
+        Arrays.stream(cells).
     }
 
     public int getSize() {
