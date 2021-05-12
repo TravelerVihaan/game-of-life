@@ -36,9 +36,12 @@ public class Board implements IBoard {
         Arrays.stream(cells).
     }
 
+    @Override
     public int getSize() {
         return size;
     }
+    
+    
 
     @Override
     public boolean equals(Object o) {
