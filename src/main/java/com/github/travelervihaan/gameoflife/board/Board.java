@@ -33,7 +33,11 @@ public class Board implements IBoard {
 
     @Override
     public void updateBoardCells() {
-        Arrays.stream(cells).
+        for(int x= 0; x < size; x++){
+            for(int y = 0; y < size; y++){
+                getCell(x,y).updateCellState();
+            }
+        }
     }
 
     @Override
@@ -48,13 +52,13 @@ public class Board implements IBoard {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Board board = (Board) o;
-        return size == board.size && Arrays.equals(cells, board.cells);
+        return size == board.size && Arrays.deepEquals(cells, board.cells);
     }
 
     @Override
     public int hashCode() {
         int result = Objects.hash(size);
-        result = 31 * result + Arrays.hashCode(cells);
+        result = 31 * result + Arrays.deepHashCode(cells);
         return result;
     }
 

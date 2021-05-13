@@ -1,7 +1,5 @@
 package com.github.travelervihaan.gameoflife.cells;
 
-import com.github.travelervihaan.gameoflife.board.IBoard;
-
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -22,8 +20,9 @@ public class Cell implements ICell {
     }
 
     @Override
-    public boolean updateCellState() {
-        return false;
+    public void updateCellState() {
+        cellStates[0] = cellStates[1];
+        cellStates[1] = null;
     }
 
     @Override
@@ -51,7 +50,7 @@ public class Cell implements ICell {
         if(aliveNeighbours == 2 || aliveNeighbours == 3){
             cellStates[1] = CellState.ALIVE;
         } else {
-            cellStates[0] = CellState.DEAD;
+            cellStates[1] = CellState.DEAD;
         }
     }
 

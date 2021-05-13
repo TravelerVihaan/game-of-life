@@ -10,5 +10,7 @@ public interface IBoard {
 
     ICell getCell(Coordinates coordinates);
 
+    int getSize();
+
     void updateBoardCells();
  }

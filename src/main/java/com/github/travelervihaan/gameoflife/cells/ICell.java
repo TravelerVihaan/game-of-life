@@ -7,7 +7,7 @@ import com.github.travelervihaan.gameoflife.board.IBoard;
  */
 public interface ICell {
 
-    boolean updateCellState();
+    void updateCellState();
 
     /**
      * Gives back value of coordinate X

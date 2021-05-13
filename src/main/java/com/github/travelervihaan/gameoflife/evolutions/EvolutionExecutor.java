@@ -27,10 +27,20 @@ public class EvolutionExecutor {
         List<CellState> neighboursStates = new ArrayList<>();
         for (int y = cellCoords.coordinateY() - 1; y <= cellCoords.coordinateY() + 1; y++) {
             for (int x = cellCoords.coordinateX() - 1; x <= cellCoords.coordinateX() + 1; x++) {
-                if (x == cellCoords.coordinateX() || y == cellCoords.coordinateY()) break;
-                neighboursStates.add(board.getCell(x, y).getCurrentCellState())
+
+                if (x == cellCoords.coordinateX() || y == cellCoords.coordinateY()) continue;
+
+                if(isCellExistsOnBoard(x, y, board.getSize())) {
+                    Coordinates cords = new Coordinates(x, y);
+                    neighboursStates.add(board.getCell(cords).getCurrentCellState());
+                }
             }
         }
         return neighboursStates;
+    }
+
+    private boolean isCellExistsOnBoard(int x, int y, int size){
+        return x >= 0 && x <= size && y >= 0 && y <= size;
+
     }
 }

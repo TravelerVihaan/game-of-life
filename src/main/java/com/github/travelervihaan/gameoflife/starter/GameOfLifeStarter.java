@@ -1,5 +1,6 @@
 package com.github.travelervihaan.gameoflife.starter;
 
+import com.github.travelervihaan.gameoflife.board.IBoard;
 import com.github.travelervihaan.gameoflife.board.creator.BoardCreatorFactory;
 import com.github.travelervihaan.gameoflife.board.creator.IBoardCreator;
 
@@ -8,8 +9,9 @@ import java.util.Scanner;
 
 public class GameOfLifeStarter implements IStarter {
 
-    public void start(){
+    public IBoard start(){
         IBoardCreator boardCreator = BoardCreatorFactory.createDefaultBoardCreator(getBoardSizeFromKeyboard());
+        return boardCreator.initializeBoard();
     }
 
     /**
