@@ -1,5 +1,6 @@
 package com.github.travelervihaan.gameoflife.board;
 
+import com.github.travelervihaan.gameoflife.cells.CellState;
 import com.github.travelervihaan.gameoflife.cells.Coordinates;
 import com.github.travelervihaan.gameoflife.cells.ICell;
 
@@ -44,8 +45,6 @@ public class Board implements IBoard {
     public int getSize() {
         return size;
     }
-    
-    
 
     @Override
     public boolean equals(Object o) {
@@ -64,9 +63,13 @@ public class Board implements IBoard {
 
     @Override
     public String toString() {
-        return "Board{" +
-                "cells=" + Arrays.toString(cells) +
-                ", size=" + size +
-                '}';
+        StringBuilder board = new StringBuilder();
+        for(int i = 0;i < size; i++){
+            for (int j= 0;j < size; j++){
+                board.append(getCell(i, j).getCurrentCellState() == CellState.ALIVE ? "A" : "D");
+            }
+            board.append(System.lineSeparator());
+        }
+        return board.toString();
     }
 }

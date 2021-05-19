@@ -8,6 +8,10 @@ public class Cell implements ICell {
     private final CellState[] cellStates;
     private final Coordinates coordinates;
 
+    public Cell(CellState cellState, Coordinates coordinates){
+        this(cellState, coordinates.coordinateX(), coordinates.coordinateY());
+    }
+
     public Cell(CellState cellState, int x, int y) {
         cellStates = new CellState[2];
         changeCurrentState(cellState);
@@ -54,8 +58,8 @@ public class Cell implements ICell {
         }
     }
 
-    private void changeCurrentState(CellState firstCellState){
-        cellStates[0] = firstCellState;
+    private void changeCurrentState(CellState newCellState){
+        cellStates[0] = newCellState;
         cellStates[1] = null;
     }
 

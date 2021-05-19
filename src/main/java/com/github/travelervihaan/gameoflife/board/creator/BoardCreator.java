@@ -29,7 +29,6 @@ class BoardCreator implements IBoardCreator {
         boolean bState = Math.random() < 0.7;
         CellState cellState = bState ? CellState.ALIVE : CellState.DEAD;
         Coordinates coordinates = new Coordinates(x, y);
-
         return new Cell(cellState, coordinates);
     }
 
