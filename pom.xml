@@ -6,9 +6,9 @@
 
     <groupId>com.github.travelervihaan</groupId>
     <artifactId>gameoflife</artifactId>
-    <version>0.8-SNAPSHOT</version>
+    <version>1.0-RELEASE</version>
     <name>Game-of-Life</name>
-    <description>Implementation of famous game found by Conway. This project is developed to help my friend with project for programming classes.</description>
+    <description>Implementation of game of life found by Conway. This project is developed to help my friend with project for programming classes.</description>
 
     <properties>
         <java.version>16</java.version>
@@ -18,14 +18,6 @@
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.7.1</version>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
