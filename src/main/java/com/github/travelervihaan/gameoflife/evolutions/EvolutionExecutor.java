@@ -13,6 +13,7 @@ public class EvolutionExecutor implements IEvolutionExecutor {
 
     @Override
     public void performEvolution(IBoard board){
+        System.out.println("Performing evolution...");
         List<ICell> cells = Arrays.stream(board.getBoardCells()).flatMap(Arrays::stream).toList();
         cells.forEach(cell -> calculateNextCellState(cell, board));
     }
