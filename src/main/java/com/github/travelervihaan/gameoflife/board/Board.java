@@ -34,10 +34,8 @@ public class Board implements IBoard {
 
     @Override
     public void updateBoardCells() {
-        for(int x= 0; x < size; x++){
-            for(int y = 0; y < size; y++){
-                getCell(x,y).updateCellState();
-            }
+        for(int x= 0; x < size; x++) {
+            for (int y = 0; y < size; y++) getCell(x, y).updateCellState();
         }
     }
 
@@ -66,7 +64,7 @@ public class Board implements IBoard {
         StringBuilder board = new StringBuilder();
         for(int i = 0;i < size; i++){
             for (int j= 0;j < size; j++){
-                board.append(getCell(i, j).getCurrentCellState() == CellState.ALIVE ? "A" : "D");
+                board.append(getCell(i, j).print());
             }
             board.append(System.lineSeparator());
         }

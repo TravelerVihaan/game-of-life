@@ -6,7 +6,7 @@
 
     <groupId>com.github.travelervihaan</groupId>
     <artifactId>gameoflife</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.8-SNAPSHOT</version>
     <name>Game-of-Life</name>
     <description>Implementation of famous game founded by Conway. This project is developed to help my firend on studies' project.</description>
 

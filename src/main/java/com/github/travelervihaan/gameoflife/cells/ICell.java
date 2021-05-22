@@ -1,11 +1,11 @@
 package com.github.travelervihaan.gameoflife.cells;
 
-import com.github.travelervihaan.gameoflife.board.IBoard;
-
 /**
  * This class represents single cell in board. Cell stores information about it place on game board and state of life @see {@link com.github.travelervihaan.gameoflife.cells.CellState}.
  */
 public interface ICell {
+
+    String print();
 
     void updateCellState();
 

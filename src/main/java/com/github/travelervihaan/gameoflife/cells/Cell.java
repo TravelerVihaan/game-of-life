@@ -13,14 +13,18 @@ public class Cell implements ICell {
     }
 
     public Cell(CellState cellState, int x, int y) {
-        cellStates = new CellState[2];
-        changeCurrentState(cellState);
+        this.cellStates = initCellState(cellState);
         this.coordinates = new Coordinates(x, y);
     }
 
     @Override
     public Coordinates getCoordinates() {
         return coordinates;
+    }
+
+    @Override
+    public String print() {
+        return getCurrentCellState().getPrintableState();
     }
 
     @Override
@@ -58,9 +62,8 @@ public class Cell implements ICell {
         }
     }
 
-    private void changeCurrentState(CellState newCellState){
-        cellStates[0] = newCellState;
-        cellStates[1] = null;
+    private CellState[] initCellState(CellState initialCellState){
+        return new CellState[]{initialCellState, null};
     }
 
     @Override
