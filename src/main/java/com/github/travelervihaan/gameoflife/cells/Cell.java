@@ -55,7 +55,9 @@ public class Cell implements ICell {
 
     @Override
     public void calculateNewCellState(long aliveNeighbours) {
-        if(aliveNeighbours == 2 || aliveNeighbours == 3){
+        if(getCurrentCellState() == CellState.ALIVE && (aliveNeighbours == 2 || aliveNeighbours == 3)){
+            cellStates[1] = CellState.ALIVE;
+        } else if(getCurrentCellState() == CellState.DEAD && aliveNeighbours == 3){
             cellStates[1] = CellState.ALIVE;
         } else {
             cellStates[1] = CellState.DEAD;

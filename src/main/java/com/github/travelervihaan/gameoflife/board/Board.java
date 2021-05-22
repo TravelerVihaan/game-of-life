@@ -1,6 +1,5 @@
 package com.github.travelervihaan.gameoflife.board;
 
-import com.github.travelervihaan.gameoflife.cells.CellState;
 import com.github.travelervihaan.gameoflife.cells.Coordinates;
 import com.github.travelervihaan.gameoflife.cells.ICell;
 

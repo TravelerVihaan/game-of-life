@@ -29,7 +29,7 @@ public class EvolutionExecutor implements IEvolutionExecutor {
         for (int y = cellCoords.coordinateY() - 1; y <= cellCoords.coordinateY() + 1; y++) {
             for (int x = cellCoords.coordinateX() - 1; x <= cellCoords.coordinateX() + 1; x++) {
 
-                if (x == cellCoords.coordinateX() || y == cellCoords.coordinateY()) continue;
+                if (x == cellCoords.coordinateX() && y == cellCoords.coordinateY()) continue;
 
                 if(isCellOnBoardScope(x, y, board.getSize())) {
                     Coordinates cords = new Coordinates(x, y);
@@ -45,6 +45,6 @@ public class EvolutionExecutor implements IEvolutionExecutor {
     }
 
     private boolean isCoordinateOnBoardScope(int coordinate, int size){
-        return coordinate >= 0 && coordinate <= size;
+        return coordinate >= 0 && coordinate < size;
     }
 }
