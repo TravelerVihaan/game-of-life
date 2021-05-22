@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class EvolutionExecutor {
+public class EvolutionExecutor implements IEvolutionExecutor {
 
+    @Override
     public void performEvolution(IBoard board){
         List<ICell> cells = Arrays.stream(board.getBoardCells()).flatMap(Arrays::stream).toList();
-
         cells.forEach(cell -> calculateNextCellState(cell, board));
     }
 
@@ -30,7 +30,7 @@ public class EvolutionExecutor {
 
                 if (x == cellCoords.coordinateX() || y == cellCoords.coordinateY()) continue;
 
-                if(isCellExistsOnBoard(x, y, board.getSize())) {
+                if(isCellOnBoardScope(x, y, board.getSize())) {
                     Coordinates cords = new Coordinates(x, y);
                     neighboursStates.add(board.getCell(cords).getCurrentCellState());
                 }
@@ -39,8 +39,11 @@ public class EvolutionExecutor {
         return neighboursStates;
     }
 
-    private boolean isCellExistsOnBoard(int x, int y, int size){
-        return x >= 0 && x <= size && y >= 0 && y <= size;
+    private boolean isCellOnBoardScope(int x, int y, int size){
+        return isCoordinateOnBoardScope(x, size) && isCoordinateOnBoardScope(y, size);
+    }
 
+    private boolean isCoordinateOnBoardScope(int coordinate, int size){
+        return coordinate >= 0 && coordinate <= size;
     }
 }

@@ -8,7 +8,7 @@
     <artifactId>gameoflife</artifactId>
     <version>0.8-SNAPSHOT</version>
     <name>Game-of-Life</name>
-    <description>Implementation of famous game founded by Conway. This project is developed to help my firend on studies' project.</description>
+    <description>Implementation of famous game found by Conway. This project is developed to help my friend with project for programming classes.</description>
 
     <properties>
         <java.version>16</java.version>

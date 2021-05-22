@@ -3,15 +3,19 @@ package com.github.travelervihaan.gameoflife.starter;
 import com.github.travelervihaan.gameoflife.board.IBoard;
 import com.github.travelervihaan.gameoflife.board.creator.BoardCreatorFactory;
 import com.github.travelervihaan.gameoflife.board.creator.IBoardCreator;
+import com.github.travelervihaan.gameoflife.game.Game;
+import com.github.travelervihaan.gameoflife.game.IGame;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GameOfLifeStarter implements IStarter {
 
-    public IBoard start(){
+    @Override
+    public void start(){
         IBoardCreator boardCreator = BoardCreatorFactory.createDefaultBoardCreator(getBoardSizeFromKeyboard());
-        return boardCreator.initializeBoard();
+        IGame game = new Game();
+        game.playGame(boardCreator.initializeBoard());
     }
 
     /**

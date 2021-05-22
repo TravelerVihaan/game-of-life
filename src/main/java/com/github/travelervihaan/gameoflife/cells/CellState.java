@@ -1,10 +1,8 @@
 package com.github.travelervihaan.gameoflife.cells;
 
-import com.github.travelervihaan.gameoflife.util.ILiteralConstants;
-
 public enum CellState {
-    ALIVE(true, ILiteralConstants.PRINTABLE_ALIVE_STATE),
-    DEAD(false, ILiteralConstants.PRINTABLE_DEAD_STATE);
+    ALIVE(true, CellState.PRINTABLE_ALIVE_STATE),
+    DEAD(false, CellState.PRINTABLE_DEAD_STATE);
 
     private final boolean cellState;
     private final String printableState;
@@ -21,4 +19,7 @@ public enum CellState {
     public String getPrintableState() {
         return printableState;
     }
+
+    private static final String PRINTABLE_ALIVE_STATE = "[o]";
+    private static final String PRINTABLE_DEAD_STATE = "[x]";
 }
